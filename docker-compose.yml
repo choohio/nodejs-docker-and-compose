@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     image: docker-frontend
     ports:
-      - 3000:80
+      - 8081:80
 
   db:
     container_name: postgres
@@ -29,11 +29,4 @@ services:
       - .env
     ports:
       - 5433:5432
-    
-
-  adminer:
-    container_name: adminer
-    restart: always
-    image: adminer
-    ports:
-      - 8081:8080
+  
