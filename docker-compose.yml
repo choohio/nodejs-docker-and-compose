@@ -1,0 +1,39 @@
+services:
+  backend:
+    container_name: 'docker-backend'
+    restart: always
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    image: docker-backend
+    env_file:
+      - .env
+    ports:
+      - 4000:3001
+    
+  frontend:
+    container_name: 'docker-frontend'
+    restart: always
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    image: docker-frontend
+    ports:
+      - 3000:80
+
+  db:
+    container_name: postgres
+    restart: always
+    image: postgres:alpine
+    env_file:
+      - .env
+    ports:
+      - 5433:5432
+    
+
+  adminer:
+    container_name: adminer
+    restart: always
+    image: adminer
+    ports:
+      - 8081:8080
