@@ -1,4 +1,4 @@
-import { URL } from "./constants";
+const URL = "http://localhost:4000";
 
 const checkResponse = (res) => {
   if (res.ok || res.created) {
