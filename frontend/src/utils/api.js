@@ -1,4 +1,4 @@
-const URL = "https://api.nomorepartiesco.ru";
+const URL = "http://api.wow.nomorepartiesco.ru";
 
 const checkResponse = (res) => {
   if (res.ok || res.created) {
