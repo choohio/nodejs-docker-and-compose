@@ -1,4 +1,4 @@
-const URL = "http://localhost:4000";
+const URL = "http://api.nomorepartiesco.ru";
 
 const checkResponse = (res) => {
   if (res.ok || res.created) {
