@@ -9,7 +9,9 @@ services:
     env_file:
       - .env
     ports:
-      - 4000:3001
+      - 3000:3000
+    networks:
+      - internal
     
   frontend:
     container_name: 'docker-frontend'
@@ -29,4 +31,22 @@ services:
       - .env
     ports:
       - 5433:5432
+    networks:
+      - internal
+    volumes:
+      - pg_data:/var/lib/postgresql/data
   
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - internal
+
+volumes:
+  pg_data:
+
+networks:
+  internal:
+  external:
